@@ -1,0 +1,651 @@
+{
+  "scenario_id": 0,
+  "task_id": "easy",
+  "seed": 1100,
+  "graph": {
+    "nodes": [
+      {
+        "node_id": "nginx-lb",
+        "node_type": "load_balancer",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0"
+        ],
+        "metrics": {
+          "latency_ms": 15.08,
+          "error_rate": 0.0067,
+          "cpu_utilization": 0.3289,
+          "memory_utilization": 0.4463
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      },
+      {
+        "node_id": "api-gateway",
+        "node_type": "api_gateway",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0"
+        ],
+        "metrics": {
+          "latency_ms": 14.41,
+          "error_rate": 0.0124,
+          "cpu_utilization": 0.3293,
+          "memory_utilization": 0.2997
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      },
+      {
+        "node_id": "auth-service",
+        "node_type": "microservice",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0"
+        ],
+        "metrics": {
+          "latency_ms": 19.61,
+          "error_rate": 0.0237,
+          "cpu_utilization": 0.3744,
+          "memory_utilization": 0.351
+        },
+        "metadata": {
+          "replica_count": 2
+        }
+      },
+      {
+        "node_id": "order-service",
+        "node_type": "microservice",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0",
+          "deploy-1"
+        ],
+        "metrics": {
+          "latency_ms": 19.83,
+          "error_rate": 0.0166,
+          "cpu_utilization": 0.2919,
+          "memory_utilization": 0.3494
+        },
+        "metadata": {
+          "replica_count": 2
+        }
+      },
+      {
+        "node_id": "payment-service",
+        "node_type": "microservice",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0",
+          "deploy-1"
+        ],
+        "metrics": {
+          "latency_ms": 18.92,
+          "error_rate": 0.0039,
+          "cpu_utilization": 0.2396,
+          "memory_utilization": 0.4735
+        },
+        "metadata": {
+          "replica_count": 2
+        }
+      },
+      {
+        "node_id": "inventory-service",
+        "node_type": "microservice",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0",
+          "deploy-1",
+          "deploy-2"
+        ],
+        "metrics": {
+          "latency_ms": 16.96,
+          "error_rate": 0.0274,
+          "cpu_utilization": 0.3489,
+          "memory_utilization": 0.4572
+        },
+        "metadata": {
+          "replica_count": 2
+        }
+      },
+      {
+        "node_id": "postgres-primary",
+        "node_type": "database",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0"
+        ],
+        "metrics": {
+          "latency_ms": 23.69,
+          "error_rate": 0.0215,
+          "cpu_utilization": 0.379,
+          "memory_utilization": 0.276
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      },
+      {
+        "node_id": "postgres-replica",
+        "node_type": "database",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0",
+          "deploy-1"
+        ],
+        "metrics": {
+          "latency_ms": 27.85,
+          "error_rate": 0.005,
+          "cpu_utilization": 0.4437,
+          "memory_utilization": 0.3716
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      },
+      {
+        "node_id": "redis-cache",
+        "node_type": "cache",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0",
+          "deploy-1",
+          "deploy-2"
+        ],
+        "metrics": {
+          "latency_ms": 13.22,
+          "error_rate": 0.0065,
+          "cpu_utilization": 0.2526,
+          "memory_utilization": 0.3589
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      },
+      {
+        "node_id": "session-cache",
+        "node_type": "cache",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0"
+        ],
+        "metrics": {
+          "latency_ms": 13.58,
+          "error_rate": 0.0104,
+          "cpu_utilization": 0.4375,
+          "memory_utilization": 0.3935
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      },
+      {
+        "node_id": "rabbitmq",
+        "node_type": "message_queue",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0"
+        ],
+        "metrics": {
+          "latency_ms": 18.16,
+          "error_rate": 0.0208,
+          "cpu_utilization": 0.3955,
+          "memory_utilization": 0.4563
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      },
+      {
+        "node_id": "s3-compatible-storage",
+        "node_type": "storage",
+        "baseline_health": 1.0,
+        "current_health": 1.0,
+        "failure_state": "healthy",
+        "failure_type": null,
+        "degraded_since": null,
+        "deployment_history": [
+          "deploy-0"
+        ],
+        "metrics": {
+          "latency_ms": 22.83,
+          "error_rate": 0.0278,
+          "cpu_utilization": 0.3372,
+          "memory_utilization": 0.3718
+        },
+        "metadata": {
+          "replica_count": 1
+        }
+      }
+    ],
+    "edges": [
+      {
+        "source_id": "postgres-primary",
+        "target_id": "auth-service",
+        "dependency_type": "db_connection",
+        "baseline_weight": 0.821,
+        "current_weight": 0.821,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 54.59,
+        "error_rate": 0.0271,
+        "metadata": {}
+      },
+      {
+        "source_id": "postgres-primary",
+        "target_id": "order-service",
+        "dependency_type": "db_connection",
+        "baseline_weight": 0.9338,
+        "current_weight": 0.9338,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 41.32,
+        "error_rate": 0.0298,
+        "metadata": {}
+      },
+      {
+        "source_id": "postgres-primary",
+        "target_id": "payment-service",
+        "dependency_type": "db_connection",
+        "baseline_weight": 0.9344,
+        "current_weight": 0.9344,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 38.74,
+        "error_rate": 0.0156,
+        "metadata": {}
+      },
+      {
+        "source_id": "postgres-replica",
+        "target_id": "inventory-service",
+        "dependency_type": "db_connection",
+        "baseline_weight": 0.8444,
+        "current_weight": 0.8444,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 48.81,
+        "error_rate": 0.02,
+        "metadata": {}
+      },
+      {
+        "source_id": "redis-cache",
+        "target_id": "auth-service",
+        "dependency_type": "cache_read",
+        "baseline_weight": 0.8235,
+        "current_weight": 0.8235,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 33.92,
+        "error_rate": 0.0178,
+        "metadata": {}
+      },
+      {
+        "source_id": "session-cache",
+        "target_id": "order-service",
+        "dependency_type": "cache_read",
+        "baseline_weight": 0.94,
+        "current_weight": 0.94,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 39.28,
+        "error_rate": 0.0085,
+        "metadata": {}
+      },
+      {
+        "source_id": "rabbitmq",
+        "target_id": "inventory-service",
+        "dependency_type": "async_queue",
+        "baseline_weight": 0.8478,
+        "current_weight": 0.8478,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 41.55,
+        "error_rate": 0.0097,
+        "metadata": {}
+      },
+      {
+        "source_id": "auth-service",
+        "target_id": "api-gateway",
+        "dependency_type": "sync_rpc",
+        "baseline_weight": 0.9282,
+        "current_weight": 0.9282,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 32.86,
+        "error_rate": 0.0013,
+        "metadata": {}
+      },
+      {
+        "source_id": "order-service",
+        "target_id": "api-gateway",
+        "dependency_type": "sync_rpc",
+        "baseline_weight": 0.978,
+        "current_weight": 0.978,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 51.55,
+        "error_rate": 0.0176,
+        "metadata": {}
+      },
+      {
+        "source_id": "payment-service",
+        "target_id": "api-gateway",
+        "dependency_type": "sync_rpc",
+        "baseline_weight": 0.8997,
+        "current_weight": 0.8997,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 30.77,
+        "error_rate": 0.0066,
+        "metadata": {}
+      },
+      {
+        "source_id": "inventory-service",
+        "target_id": "api-gateway",
+        "dependency_type": "sync_rpc",
+        "baseline_weight": 0.9134,
+        "current_weight": 0.9134,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 45.34,
+        "error_rate": 0.0064,
+        "metadata": {}
+      },
+      {
+        "source_id": "api-gateway",
+        "target_id": "nginx-lb",
+        "dependency_type": "sync_rpc",
+        "baseline_weight": 0.877,
+        "current_weight": 0.877,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 48.84,
+        "error_rate": 0.0121,
+        "metadata": {}
+      },
+      {
+        "source_id": "s3-compatible-storage",
+        "target_id": "payment-service",
+        "dependency_type": "sync_rpc",
+        "baseline_weight": 0.8468,
+        "current_weight": 0.8468,
+        "circuit_breaker_state": false,
+        "latency_p99_ms": 39.15,
+        "error_rate": 0.0158,
+        "metadata": {}
+      }
+    ]
+  },
+  "failure_injection": {
+    "root_nodes": [
+      "postgres-primary"
+    ],
+    "injection_time": 0,
+    "failure_types": [
+      "oom"
+    ]
+  },
+  "red_herrings": [],
+  "cascade_trajectory": [
+    {
+      "step": 0,
+      "timestamp": "2026-03-29T11:13:26.612366",
+      "wavefront": [],
+      "blast_radius": [
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "postgres-primary"
+      ]
+    },
+    {
+      "step": 1,
+      "timestamp": "2026-03-29T11:13:56.612366",
+      "wavefront": [
+        "payment-service"
+      ],
+      "blast_radius": [
+        "payment-service",
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "payment-service",
+        "postgres-primary"
+      ]
+    },
+    {
+      "step": 2,
+      "timestamp": "2026-03-29T11:14:26.612366",
+      "wavefront": [
+        "order-service",
+        "payment-service"
+      ],
+      "blast_radius": [
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ]
+    },
+    {
+      "step": 3,
+      "timestamp": "2026-03-29T11:14:56.612366",
+      "wavefront": [
+        "auth-service",
+        "order-service",
+        "payment-service"
+      ],
+      "blast_radius": [
+        "api-gateway",
+        "auth-service",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "api-gateway",
+        "auth-service",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ]
+    },
+    {
+      "step": 4,
+      "timestamp": "2026-03-29T11:15:26.612366",
+      "wavefront": [
+        "auth-service",
+        "order-service",
+        "payment-service"
+      ],
+      "blast_radius": [
+        "api-gateway",
+        "auth-service",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "api-gateway",
+        "auth-service",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ]
+    },
+    {
+      "step": 5,
+      "timestamp": "2026-03-29T11:15:56.612366",
+      "wavefront": [
+        "auth-service",
+        "order-service",
+        "payment-service"
+      ],
+      "blast_radius": [
+        "api-gateway",
+        "auth-service",
+        "nginx-lb",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "api-gateway",
+        "auth-service",
+        "nginx-lb",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ]
+    },
+    {
+      "step": 6,
+      "timestamp": "2026-03-29T11:16:26.612366",
+      "wavefront": [
+        "auth-service",
+        "order-service",
+        "payment-service"
+      ],
+      "blast_radius": [
+        "api-gateway",
+        "auth-service",
+        "nginx-lb",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "api-gateway",
+        "auth-service",
+        "nginx-lb",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ]
+    },
+    {
+      "step": 7,
+      "timestamp": "2026-03-29T11:16:56.612366",
+      "wavefront": [
+        "auth-service",
+        "order-service",
+        "payment-service"
+      ],
+      "blast_radius": [
+        "api-gateway",
+        "auth-service",
+        "nginx-lb",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ],
+      "cascade_nodes": [
+        "api-gateway",
+        "auth-service",
+        "nginx-lb",
+        "order-service",
+        "payment-service",
+        "postgres-primary"
+      ]
+    }
+  ],
+  "healing_traps": [],
+  "ground_truth_blast_radius": [
+    "api-gateway",
+    "auth-service",
+    "nginx-lb",
+    "order-service",
+    "payment-service",
+    "postgres-primary"
+  ],
+  "expected_optimal_actions": [
+    {
+      "step": 1,
+      "action": {
+        "action_type": "hypothesize_root",
+        "target_node_id": "postgres-primary",
+        "target_edge": null,
+        "hypothesis": {
+          "root_node": "postgres-primary"
+        },
+        "heal_strategy": null,
+        "diagnosis": null,
+        "reasoning": "synthetic optimal action"
+      }
+    },
+    {
+      "step": 2,
+      "action": {
+        "action_type": "execute_heal",
+        "target_node_id": "postgres-primary",
+        "target_edge": null,
+        "hypothesis": null,
+        "heal_strategy": "failover",
+        "diagnosis": null,
+        "reasoning": "synthetic optimal action"
+      }
+    },
+    {
+      "step": 3,
+      "action": {
+        "action_type": "execute_heal",
+        "target_node_id": "order-service",
+        "target_edge": null,
+        "hypothesis": null,
+        "heal_strategy": "smart_heal",
+        "diagnosis": null,
+        "reasoning": "synthetic optimal action"
+      }
+    },
+    {
+      "step": 4,
+      "action": {
+        "action_type": "execute_heal",
+        "target_node_id": "payment-service",
+        "target_edge": null,
+        "hypothesis": null,
+        "heal_strategy": "smart_heal",
+        "diagnosis": null,
+        "reasoning": "synthetic optimal action"
+      }
+    }
+  ]
+}

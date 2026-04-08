@@ -1,0 +1,47 @@
+name: infra-mind
+version: "1.0.0"
+description: >
+  Autonomous cloud infrastructure reasoning and self-healing environment.
+  An AI agent navigates a Temporal Knowledge Graph of cloud services to
+  diagnose cascading failures and execute healing actions. Features
+  SIR-based cascade propagation, GraphRAG-style observation, and
+  counterfactual grading.
+author: "Team INFRA-MIND"
+tags: [cloud, devops, sre, knowledge-graph, cascade-failure, self-healing]
+
+tasks:
+  - id: easy
+    name: "Single Service Failure Detection"
+    difficulty: easy
+    max_steps: 20
+    score_range: [0.0, 1.0]
+  - id: medium
+    name: "Multi-Hop Cascade Diagnosis"
+    difficulty: medium
+    max_steps: 30
+    score_range: [0.0, 1.0]
+  - id: hard
+    name: "Multi-Root Self-Healing Under Constraints"
+    difficulty: hard
+    max_steps: 25
+    score_range: [0.0, 1.0]
+
+observation_space:
+  type: object
+  description: "GraphSnapshot of visible infrastructure subgraph + temporal history"
+
+action_space:
+  type: enum
+  values: [explore_node, query_dependency, hypothesize_root, execute_heal, circuit_break, rollback_deployment, scale_out, restart_service, submit_diagnosis]
+
+reward:
+  type: continuous
+  range: [-1.0, 1.0]
+  shaped: true
+  shaping_method: "potential-based (Ng et al. 1999)"
+
+endpoints:
+  reset: POST /reset
+  step: POST /step
+  state: GET /state
+  health: GET /health

@@ -1,0 +1,1256 @@
+{
+  "episodes": [
+    {
+      "task_id": "easy",
+      "scenario_id": 0,
+      "score": 0.795,
+      "success": true,
+      "counterfactual_score": 0.6667,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "explore_node",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node api-gateway."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "payment-service",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node payment-service."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "postgres-primary",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node postgres-primary."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "payment-service",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node payment-service."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "postgres-primary",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node postgres-primary."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "payment-service",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "payment-service"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is payment-service."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "payment-service",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "payment-service"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is payment-service."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "s3-compatible-storage",
+            "payment-service"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency s3-compatible-storage->payment-service."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "payment-service",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "payment-service"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "payment-service",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "payment-service"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "payment-service",
+              "postgres-primary"
+            ],
+            "blast_radius": [],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "easy",
+      "scenario_id": 1,
+      "score": 0.4838,
+      "success": false,
+      "counterfactual_score": 0.6667,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary",
+            "order-service"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary->order-service."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "auth-service",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node auth-service."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "auth-service",
+            "api-gateway"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency auth-service->api-gateway."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "auth-service",
+            "api-gateway"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency auth-service->api-gateway."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "postgres-primary",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node postgres-primary."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "payment-service",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node payment-service."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "postgres-primary",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node postgres-primary."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "auth-service",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node auth-service."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "auth-service",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "auth-service"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "auth-service",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "auth-service"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "auth-service",
+              "payment-service"
+            ],
+            "blast_radius": [],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "easy",
+      "scenario_id": 2,
+      "score": 0.0987,
+      "success": false,
+      "counterfactual_score": 0.8333,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "postgres-primary",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node postgres-primary."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary",
+            "auth-service"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary->auth-service."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "postgres-primary",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node postgres-primary."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "order-service",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node order-service."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "api-gateway"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is api-gateway."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary",
+            "auth-service"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary->auth-service."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "inventory-service",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node inventory-service."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary",
+            "order-service"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary->order-service."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "api-gateway"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "api-gateway"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "api-gateway",
+              "auth-service"
+            ],
+            "blast_radius": [],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "medium",
+      "scenario_id": 0,
+      "score": 0.7931,
+      "success": false,
+      "counterfactual_score": 0.25,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary-a",
+            "payment-service-a"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary-a->payment-service-a."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "order-service-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node order-service-a."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "postgres-primary-a",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "postgres-primary-a"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is postgres-primary-a."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary-a",
+            "payment-service-a"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary-a->payment-service-a."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node api-gateway."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "payment-service-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node payment-service-a."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "auth-service-a",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "auth-service-a"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is auth-service-a."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "auth-service-a",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "auth-service-a"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is auth-service-a."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "auth-service-a",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "auth-service-a"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "api-gateway"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "order-service-a",
+              "api-gateway"
+            ],
+            "blast_radius": [
+              "analytics-pipeline-b",
+              "api-gateway",
+              "canary-api-c",
+              "canary-worker-c",
+              "config-service-c",
+              "event-consumer-b",
+              "notification-service-b",
+              "order-service-a",
+              "rabbitmq"
+            ],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "medium",
+      "scenario_id": 1,
+      "score": 0.2498,
+      "success": false,
+      "counterfactual_score": 0.5,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "scale_out",
+          "target_node_id": "postgres-primary-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node postgres-primary-a."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "order-service-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node order-service-a."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "canary-api-c",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node canary-api-c."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "order-service-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node order-service-a."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "canary-api-c",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node canary-api-c."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "checkout-worker-a",
+            "rabbitmq"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency checkout-worker-a->rabbitmq."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "canary-api-c",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node canary-api-c."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "order-service-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node order-service-a."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "order-service-a",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "order-service-a"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "auth-service-a",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "auth-service-a"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "auth-service-a",
+              "canary-api-c"
+            ],
+            "blast_radius": [
+              "auth-service-a",
+              "canary-worker-c",
+              "config-service-c"
+            ],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "medium",
+      "scenario_id": 2,
+      "score": 0.3214,
+      "success": false,
+      "counterfactual_score": 0.25,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary-a",
+            "order-service-a"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary-a->order-service-a."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node api-gateway."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "pricing-service-a",
+            "api-gateway"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency pricing-service-a->api-gateway."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "postgres-primary-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node postgres-primary-a."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "order-service-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node order-service-a."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "payment-service-a",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node payment-service-a."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "auth-service-a",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "auth-service-a"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is auth-service-a."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "api-gateway",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node api-gateway."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "canary-api-c",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "canary-api-c"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "canary-api-c",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "canary-api-c"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "canary-api-c",
+              "auth-service-a"
+            ],
+            "blast_radius": [
+              "canary-api-c",
+              "canary-worker-c",
+              "config-service-c"
+            ],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "hard",
+      "scenario_id": 0,
+      "score": 0.6202,
+      "success": false,
+      "counterfactual_score": 0.5,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "explore_node",
+          "target_node_id": "auth-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node auth-service-us-east-1."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "auth-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node auth-service-us-east-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "feature-flag-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node feature-flag-service-us-east-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "feature-flag-service-eu-west-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node feature-flag-service-eu-west-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "order-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node order-service-us-east-1."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "nginx-lb-eu-west-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node nginx-lb-eu-west-1."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "payment-service-ap-south-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node payment-service-ap-south-1."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "user-profile-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node user-profile-service-us-east-1."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "nginx-lb-ap-south-1",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "nginx-lb-ap-south-1"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "payment-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "payment-service-us-east-1"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "feature-flag-service-eu-west-1",
+              "postgres-primary-us-east-1"
+            ],
+            "blast_radius": [
+              "analytics-pipeline-eu-west-1",
+              "auth-service-us-east-1",
+              "billing-worker-ap-south-1",
+              "catalog-service-ap-south-1",
+              "checkout-worker-eu-west-1",
+              "deployment-controller",
+              "feature-flag-service-ap-south-1",
+              "feature-flag-service-eu-west-1",
+              "feature-flag-service-us-east-1",
+              "fraud-detector-eu-west-1",
+              "global-api-gateway",
+              "global-rabbitmq",
+              "nginx-lb-us-east-1",
+              "notification-service-eu-west-1",
+              "order-service-us-east-1",
+              "payment-service-eu-west-1",
+              "postgres-primary-us-east-1",
+              "quota-manager-ap-south-1",
+              "rabbitmq-eu-west-1",
+              "search-service-ap-south-1",
+              "session-service-ap-south-1"
+            ],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "hard",
+      "scenario_id": 1,
+      "score": 0.7546,
+      "success": false,
+      "counterfactual_score": 0.4783,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "postgres-primary-us-east-1",
+            "auth-service-us-east-1"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency postgres-primary-us-east-1->auth-service-us-east-1."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "postgres-primary-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node postgres-primary-us-east-1."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "feature-flag-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node feature-flag-service-us-east-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "payment-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node payment-service-us-east-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "feature-flag-service-eu-west-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node feature-flag-service-eu-west-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "feature-flag-service-eu-west-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node feature-flag-service-eu-west-1."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "fraud-detector-eu-west-1",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "fraud-detector-eu-west-1"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Current best root candidate is fraud-detector-eu-west-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "checkout-worker-eu-west-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node checkout-worker-eu-west-1."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "rabbitmq-eu-west-1",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "rabbitmq-eu-west-1"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "feature-flag-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "feature-flag-service-us-east-1"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "feature-flag-service-eu-west-1",
+              "payment-service-us-east-1"
+            ],
+            "blast_radius": [
+              "analytics-pipeline-eu-west-1",
+              "auth-service-us-east-1",
+              "billing-worker-ap-south-1",
+              "catalog-service-ap-south-1",
+              "checkout-worker-eu-west-1",
+              "deployment-controller",
+              "feature-flag-service-ap-south-1",
+              "feature-flag-service-eu-west-1",
+              "fraud-detector-eu-west-1",
+              "global-api-gateway",
+              "nginx-lb-ap-south-1",
+              "order-service-us-east-1",
+              "payment-service-ap-south-1",
+              "payment-service-eu-west-1",
+              "payment-service-us-east-1",
+              "quota-manager-ap-south-1",
+              "search-service-ap-south-1",
+              "session-service-ap-south-1",
+              "user-profile-service-us-east-1"
+            ],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    },
+    {
+      "task_id": "hard",
+      "scenario_id": 2,
+      "score": 0.3739,
+      "success": false,
+      "counterfactual_score": 0.4,
+      "steps": 11,
+      "actions": [
+        {
+          "action_type": "explore_node",
+          "target_node_id": "auth-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node auth-service-us-east-1."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "auth-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node auth-service-us-east-1."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "order-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node order-service-us-east-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "postgres-primary-us-east-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node postgres-primary-us-east-1."
+        },
+        {
+          "action_type": "explore_node",
+          "target_node_id": "deployment-controller",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Expand visibility around anomalous node deployment-controller."
+        },
+        {
+          "action_type": "execute_heal",
+          "target_node_id": "notification-service-eu-west-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": "smart_heal",
+          "diagnosis": null,
+          "reasoning": "Attempt healing on degraded node notification-service-eu-west-1."
+        },
+        {
+          "action_type": "scale_out",
+          "target_node_id": "search-service-ap-south-1",
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Relieve load on degraded node search-service-ap-south-1."
+        },
+        {
+          "action_type": "query_dependency",
+          "target_node_id": null,
+          "target_edge": [
+            "payment-service-eu-west-1",
+            "nginx-lb-eu-west-1"
+          ],
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Inspect weak dependency payment-service-eu-west-1->nginx-lb-eu-west-1."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "order-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "order-service-us-east-1"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "hypothesize_root",
+          "target_node_id": "feature-flag-service-us-east-1",
+          "target_edge": null,
+          "hypothesis": {
+            "root_node": "feature-flag-service-us-east-1"
+          },
+          "heal_strategy": null,
+          "diagnosis": null,
+          "reasoning": "Fallback heuristic root-cause hypothesis."
+        },
+        {
+          "action_type": "submit_diagnosis",
+          "target_node_id": null,
+          "target_edge": null,
+          "hypothesis": null,
+          "heal_strategy": null,
+          "diagnosis": {
+            "root_causes": [
+              "feature-flag-service-eu-west-1",
+              "payment-service-eu-west-1"
+            ],
+            "blast_radius": [
+              "analytics-pipeline-eu-west-1",
+              "auth-service-us-east-1",
+              "billing-worker-ap-south-1",
+              "catalog-service-ap-south-1",
+              "checkout-worker-eu-west-1",
+              "deployment-controller",
+              "feature-flag-service-ap-south-1",
+              "feature-flag-service-eu-west-1",
+              "feature-flag-service-us-east-1",
+              "fraud-detector-eu-west-1",
+              "nginx-lb-ap-south-1",
+              "nginx-lb-us-east-1",
+              "payment-service-ap-south-1",
+              "payment-service-eu-west-1",
+              "quota-manager-ap-south-1",
+              "rabbitmq-eu-west-1",
+              "search-service-ap-south-1",
+              "session-service-ap-south-1",
+              "user-profile-service-us-east-1"
+            ],
+            "isolated_edges": [],
+            "trap_triggered_nodes": []
+          },
+          "reasoning": "Fallback heuristic diagnosis based on lowest-health nodes and weak edges."
+        }
+      ]
+    }
+  ],
+  "aggregate": {
+    "medium": {
+      "episodes": 3,
+      "average_score": 0.4548,
+      "success_rate": 0.0
+    },
+    "easy": {
+      "episodes": 3,
+      "average_score": 0.4592,
+      "success_rate": 0.3333
+    },
+    "hard": {
+      "episodes": 3,
+      "average_score": 0.5829,
+      "success_rate": 0.0
+    },
+    "overall": {
+      "episodes": 9,
+      "average_score": 0.4989,
+      "success_rate": 0.1111,
+      "model_name": "gpt-4o-mini",
+      "api_base_url": "https://api.openai.com/v1",
+      "hf_token_present": false
+    }
+  }
+}
