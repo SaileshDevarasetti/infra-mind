@@ -1,0 +1,14 @@
+name: infra-mind
+version: "1.0.0"
+description: >
+  Autonomous cloud infrastructure reasoning and self-healing environment.
+  An AI agent navigates a Temporal Knowledge Graph of cloud services to
+  diagnose cascading failures and execute healing actions.
+author: "Team INFRA-MIND"
+tags: [cloud, devops, sre]
+
+endpoints:
+  reset: POST /reset
+  step: POST /step
+  state: GET /state
+  health: GET /health
